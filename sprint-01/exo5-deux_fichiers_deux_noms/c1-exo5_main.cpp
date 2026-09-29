@@ -2,6 +2,6 @@
 
 int main()
 {
-    printf("Bonjour\n");
+    printf("VIlle: Yaounde\n");
     return 0;
 }

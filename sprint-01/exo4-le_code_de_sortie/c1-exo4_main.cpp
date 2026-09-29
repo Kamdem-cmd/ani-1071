@@ -2,5 +2,7 @@
 
 int main()
 {
-  return 0;
+    int n = 3;
+    printf("le code de sorti vaut %d\n", n);
+    return n;
 }

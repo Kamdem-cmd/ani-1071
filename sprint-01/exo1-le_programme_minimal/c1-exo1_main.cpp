@@ -2,5 +2,7 @@
 
 int main()
 {
-  return 0;
+    printf("Nom: KAMDEM Kevin\n");
+    printf("VIlle: Yaounde\n")
+    return 0;
 }
