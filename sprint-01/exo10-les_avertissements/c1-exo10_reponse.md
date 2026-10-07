@@ -41,9 +41,10 @@ c1-exo10_main.cpp:5:12: warning: unused variable 'n' [-Wunused-variable]
 ```
 
 
-## Conclusion
+## Bilan
 
 Dans le message:
 ```powershell
 warning: unused variable 'n' [-Wunused-variable]
 ```
+* **Difference entre erreur et avertissement :** 

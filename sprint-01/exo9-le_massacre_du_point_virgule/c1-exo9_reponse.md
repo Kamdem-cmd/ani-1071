@@ -9,27 +9,54 @@
 int main()
 {
     printf("Nom: KAMDEM Kevin\n")
-    printf("VIlle: Yaounde\n")
+    printf("Ville: Yaounde\n")
     return 0
 }
 ```
 * **Compilation et execution du programme**
 ```powershell
-D:\ENSPY\AN-GAP_4\teguis\ASSF-1071\ani-1071\sprint-01\exo8-l_erreur_qui_ne_vient_pas_du_compilateur>clang++ -c c1-exo8_main.cpp
-
-D:\ENSPY\AN-GAP_4\teguis\ASSF-1071\ani-1071\sprint-01\exo8-l_erreur_qui_ne_vient_pas_du_compilateur>clang++ c1-exo8_main.cpp -o programme
-C:/msys64/ucrt64/bin/ld: C:/Users/SMART/AppData/Local/Temp/c1-exo8_main-2c4bb0.o:c1-exo8_main.cpp:(.text+0x17): undefined reference to `calculer()''
-clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+D:\ENSPY\AN-GAP_4\teguis\ASSF-1071\ani-1071\sprint-01\exo9-le_massacre_du_point_virgule>clang++ c1-exo9_main.cpp -o programme
+c1-exo9_main.cpp:5:34: error: expected ';' after expression
+    5 |     printf("Nom: KAMDEM Kevin\n")
+      |                                  ^
+      |                                  ;
+c1-exo9_main.cpp:6:31: error: expected ';' after expression
+    6 |     printf("Ville: Yaounde\n")
+      |                               ^
+      |                               ;
+c1-exo9_main.cpp:7:13: error: expected ';' after return statement
+    7 |     return 0
+      |             ^
+      |             ;
+3 errors generated.
 ```
+ **Constat :** Il y a exactement 3 messages d'erreurs. 
 
+* **extrait du programme**
+```cpp
+#include <cstdio>
 
-## Conclusion
-
-Dans le second cas, le message:
+int main()
+{
+    printf("Nom: KAMDEM Kevin\n");
+    printf("Ville: Yaounde\n")
+    return 0
+}
+```
+* **Compilation et execution du programme**
 ```powershell
-clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+D:\ENSPY\AN-GAP_4\teguis\ASSF-1071\ani-1071\sprint-01\exo9-le_massacre_du_point_virgule>clang++ c1-exo9_main.cpp -o programme
+c1-exo9_main.cpp:6:31: error: expected ';' after expression
+    6 |     printf("Ville: Yaounde\n")
+      |                               ^
+      |                               ;
+c1-exo9_main.cpp:7:13: error: expected ';' after return statement
+    7 |     return 0
+      |             ^
+      |             ;
+2 errors generated.
 ```
 
-traduit une erreur lors de l'edition de lien en effet cela est du au fait que la fonction `calculer()` est declaré et utilisé sans etre definit dans notre programme.
+## Bilan
 
-Cette commande contrairement à l'autre signale cette erreur parce que cette etape est plus avancée que la premire dans la compilation d'un fichier source en fichier executable.
+ un seul message à disparue apres cette experience.
