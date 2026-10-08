@@ -1,0 +1,8 @@
+Dans quel sens mon cercle etait deforme :
+Sans correction, le cercle était déformé verticalement et paraissait nettement plus haut que large (étiré vers le haut et le bas). En réalité, le rendu graphique comportait le même nombre exact de caractères en largeur et en hauteur (2r + 1), mais comme les glyphes de la police à chasse fixe (monospace) de la grille du terminal sont environ deux fois plus hauts que larges, un cercle mathématiquement carré en nombre de cellules s'affiche sous forme d'une ellipse allongée verticalement à l'écran.
+
+Le rapport que j'ai employe, et comment je l'ai trouve :
+J'ai employé un rapport d'aspect (Pixel Aspect Ratio) de 2:1. Je l'ai déterminé en mesurant les dimensions physiques d'une cellule de caractères dans la console (par exemple 8 pixels de large pour 16 pixels de haut sur une police standard Consolas / Courrier New) ou en constatant qu'afficher deux caractères consécutifs "##" par unité de x pour un seul caractère par unité de y rétablit une proportion visuelle circulaire équilibrée (compensation de l'étirement vertical par un facteur de multiplication horizontal de 2).
+
+Ou ailleurs ce probleme se pose :
+Ce problème de ratio d'aspect non carré (Pixel Aspect Ratio != 1.0) se pose dans l'affichage vidéo historique (normes télévisuelles PAL/NTSC et DVD où les pixels étaient rectangulaires), dans le rendu de jeux vidéo rétro sur écrans cathodiques CRT (modes graphiques 320x200 étirés en 4:3), dans les dispositifs d'imagerie médicale (scanners IRM/CT) ainsi que lors du dimensionnement de viewports et de framebuffer sur des écrans à haute densité (Retina/DPI scaling) en synthèse d'image 3D.
