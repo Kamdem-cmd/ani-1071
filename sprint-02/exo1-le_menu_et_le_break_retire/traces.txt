@@ -1,0 +1,10 @@
+avec break, entree 1 : nouvelle partie
+avec break, entree 2 : charger
+avec break, entree 3 : options
+avec break, entree 4 : quitter
+avec break, entree 9 : choix invalide
+sans break, entree 1 : nouvelle partie
+sans break, entree 2 : charger puis options
+sans break, entree 3 : options
+sans break, entree 4 : quitter
+sans break, entree 9 : choix invalide
