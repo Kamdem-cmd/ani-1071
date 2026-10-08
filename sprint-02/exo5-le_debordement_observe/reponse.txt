@@ -1,0 +1,8 @@
+Mes six mesures :
+Pour le type int (32 bits signé), la valeur devient négative au tour 31 (-2147483648) puis atteint zéro au tour 32. Pour long long (64 bits signé), elle devient négative au tour 63 (-9223372036854775808) puis zéro au tour 64. Pour unsigned int (32 bits non signé), la valeur ne devient jamais négative et s'annule au tour 32. Les résultats obtenus par multiplication (x *= 2) et par décalage de bit (x <<= 1) sont rigoureusement identiques pour les trois types.
+
+Ce qui se passe en binaire aux deux tours :
+Au tour 31 pour un entier de 32 bits, le bit de poids fort (bit 31, appelé bit de signe) passe de 0 à 1 : la représentation binaire passe de 0x40000000 à 0x80000000. En complément à deux, cette configuration correspond au nombre négatif minimal (-2^31). Au tour 32, la valeur est à nouveau décalée d'un bit vers la gauche (multipliée par 2), ce qui fait sortir ce bit de poids fort de la plage du registre (débordement) et ne laisse que des 0 dans le mot binaire (0x00000000), rendant la valeur nulle.
+
+Ce que unsigned change, et pourquoi :
+Le qualificatif unsigned modifie l'interprétation des bits en supprimant le bit de signe. Tous les 32 bits contribuent exclusivement à la valeur magnitude, permettant d'atteindre 4294967295 (0xFFFFFFFF). Par conséquent, la valeur ne peut jamais être négative. De plus, contrairement aux entiers signés pour lesquels le débordement constitue un comportement indéfini (Undefined Behavior en C++), le débordement d'un entier non signé est strictement défini par la norme comme une arithmétique modulo 2^32, garantissant un retour contrôlé à zéro lors du 32e décalage.
