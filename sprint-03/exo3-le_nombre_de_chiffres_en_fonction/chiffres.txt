@@ -1,0 +1,6 @@
+int, fois deux, negatif au tour : 31, zero au tour : 32
+long long, fois deux, negatif au tour : 63, zero au tour : 64
+unsigned int, fois deux, negatif au tour : jamais, zero au tour : 32
+int, decalage, negatif au tour : 31, zero au tour : 32
+long long, decalage, negatif au tour : 63, zero au tour : 64
+unsigned int, decalage, negatif au tour : jamais, zero au tour : 32

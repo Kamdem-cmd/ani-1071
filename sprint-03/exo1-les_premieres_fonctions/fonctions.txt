@@ -1,0 +1,8 @@
+Les entrees dont la sortie change :
+Seule l'entrée 2 voit sa sortie changer. Sans l'instruction break dans le bloc case 2, le fil d'exécution poursuit son cours directement dans le cas suivant (fallthrough), ce qui produit l'affichage "charger puis options" (la chaîne du cas 2 suivie immédiatement de celle du cas 3).
+
+Pourquoi les autres ne changent pas :
+Les autres entrées (1, 3, 4 et 9) déclenchent des étiquettes de cas situées avant ou après le cas 2. Comme le commutateur saute directement à l'étiquette correspondant à l'entrée lue, l'exécution ne franchit jamais le cas 2 pour ces valeurs. Leurs blocs respectifs disposent toujours de leur propre instruction break qui interrompt le switch normalement.
+
+Un cas ou tomber a travers est voulu :
+Tomber à travers (fallthrough) est voulu lorsque plusieurs cas distincts doivent partager exactement le même traitement, comme regrouper les étiquettes 'y' et 'Y' pour confirmer une action, ou associer tous les jours de la semaine (lundi à vendredi) à un même tarif standard avant de placer un break unique.
