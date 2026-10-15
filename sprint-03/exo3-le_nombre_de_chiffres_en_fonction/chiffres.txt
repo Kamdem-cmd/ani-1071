@@ -1,0 +1,20 @@
+Chiffres :
+Résultats du comptage du nombre de chiffres pour différentes valeurs entières :
+- 7 -> 1 chiffre
+- 42 -> 2 chiffres
+- 1000 -> 4 chiffres
+- 2147483647 -> 10 chiffres (valeur maximale d'un entier signé sur 32 bits)
+- 0 -> 1 chiffre
+
+Comparaison :
+Comparaison entre le calcul dynamique du nombre de chiffres et l'affichage formaté avec la spécification de largeur fixe `%4d` (alignement à droite avec remplissage par des espaces) :
+[   7][   7]
+[  42][  42]
+[1000][1000]
+[   0][   0]
+[12345][12345]
+[ -42][ -42]
+[  -7][  -7]
+
+Observation :
+Le formatage `printf("%4d", ...)` réserve automatiquement un champ de 4 caractères de large, alignant les nombres à droite et complétant les espaces vides par la gauche. Pour les nombres dont la taille dépasse ou égale la largeur spécifiée (comme `1000`, `12345` ou `-42` avec le signe), le format s'étend automatiquement pour éviter toute troncature. Le calcul algorithmique du nombre de chiffres permet quant à lui de connaître précisément l'espace logique occupé par chaque entier, ce qui est particulièrement utile pour concevoir des interfaces textuelles ou des alignements dynamiques personnalisés.

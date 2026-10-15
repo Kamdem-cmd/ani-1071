@@ -1,0 +1,64 @@
+sortie du programme
+
+--- FACTORIELLES LONG LONG (1 ├á 25) ---
+n =  1 | n! =                      1 | quotient = 1
+n =  2 | n! =                      2 | quotient = 2
+n =  3 | n! =                      6 | quotient = 3
+n =  4 | n! =                     24 | quotient = 4
+n =  5 | n! =                    120 | quotient = 5
+n =  6 | n! =                    720 | quotient = 6
+n =  7 | n! =                   5040 | quotient = 7
+n =  8 | n! =                  40320 | quotient = 8
+n =  9 | n! =                 362880 | quotient = 9
+n = 10 | n! =                3628800 | quotient = 10
+n = 11 | n! =               39916800 | quotient = 11
+n = 12 | n! =              479001600 | quotient = 12
+n = 13 | n! =             6227020800 | quotient = 13
+n = 14 | n! =            87178291200 | quotient = 14
+n = 15 | n! =          1307674368000 | quotient = 15
+n = 16 | n! =         20922789888000 | quotient = 16
+n = 17 | n! =        355687428096000 | quotient = 17
+n = 18 | n! =       6402373705728000 | quotient = 18
+n = 19 | n! =     121645100408832000 | quotient = 19
+n = 20 | n! =    2432902008176640000 | quotient = 20
+n = 21 | n! =   -4249290049419214848 | quotient = -1
+n = 22 | n! =   -1250660718674968576 | quotient = 0
+n = 23 | n! =    8128291617894825984 | quotient = -6
+n = 24 | n! =   -7835185981329244160 | quotient = 0
+n = 25 | n! =    7034535277573963776 | quotient = 0
+
+--- FACTORIELLES INT (1 ├á 17) ---
+n =  1 | n! =            1 | quotient = 1
+n =  2 | n! =            2 | quotient = 2
+n =  3 | n! =            6 | quotient = 3
+n =  4 | n! =           24 | quotient = 4
+n =  5 | n! =          120 | quotient = 5
+n =  6 | n! =          720 | quotient = 6
+n =  7 | n! =         5040 | quotient = 7
+n =  8 | n! =        40320 | quotient = 8
+n =  9 | n! =       362880 | quotient = 9
+n = 10 | n! =      3628800 | quotient = 10
+n = 11 | n! =     39916800 | quotient = 11
+n = 12 | n! =    479001600 | quotient = 12
+n = 13 | n! =   1932053504 | quotient = 4
+n = 14 | n! =   1278945280 | quotient = 0
+n = 15 | n! =   2004310016 | quotient = 1
+n = 16 | n! =   2004189184 | quotient = 0
+n = 17 | n! =   -288522240 | quotient = 0
+
+Factorielles :
+Résultats des calculs de factorielles avec les types `long long` (de 1 à 25) et `int` (de 1 à 17) :
+
+1. Type `long long` :
+- $1! = 1$ (quotient = 1) jusqu'à $20! = 2 432 902 008 176 640 000$ (quotient = 20)
+- À partir de $n = 21$, le dépassement de capacité (`overflow`) provoque des valeurs négatives aberrantes et des quotients incohérents (ex: $21! = -4 424 929 004 941 921 484$), car le résultat dépasse la capacité maximale d'un entier signé sur 64 bits.
+
+2. Type `int` :
+- $1! = 1$ jusqu'à $12! = 479 001 600$ (quotient = 12)
+- Dès $n = 13$, l'entier standard sur 32 bits sature et bascule dans le faux (ex: $13! = 1 932 053 504$, alors qu'il devrait valoir $6 227 020 800$), avant de donner des résultats complètement aberrants ou négatifs dès $n = 17$ ($-288 522 240$).
+
+Limites et dépassements :
+Le passage critique s'effectue lorsque le produit dépasse la valeur maximale représentable par le type de données. Pour un `int` (32 bits), la limite est atteinte après $12!$ (car $13!$ dépasse $2^{31}-1$). Pour un `long long` (64 bits), la limite se manifeste après $20!$ (car $21!$ dépasse $2^{63}-1$).
+
+Comportement silencieux :
+Le compilateur et le processeur effectuent les multiplications modulo $2^{32}$ ou $2^{63}$ de manière totalement silencieuse sans générer d'erreur d'exécution, ce qui transforme les bits de poids fort en bit de signe (rendant les nombres négatifs) et fausse complètement les calculs arithmétiques.

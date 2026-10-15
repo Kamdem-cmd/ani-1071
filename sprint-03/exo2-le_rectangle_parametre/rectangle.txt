@@ -1,0 +1,24 @@
+Formes :
+Affichage des figures géométriques textuelles obtenues par boucles imbriquées (lignes et colonnes) :
+:
+*****
+*   *
+*****
+
+oooooo
+o    o
+o    o
+oooooo
+
+####
+#  #
+####
+
+Logique :
+La génération de ces formes repose sur l'utilisation de boucles imbriquées (`for` ou `while`). 
+- La boucle externe gère le parcours des lignes (hauteur de la figure).
+- La boucle interne gère le parcours des colonnes (largeur de la figure).
+À l'aide d'une condition (`if / else`), le programme détermine s'il faut imprimer un caractère plein (comme `*`, `o` ou `#`) ou un espace vide (` `) pour dessiner les contours tout en laissant l'intérieur évidé lorsque c'est demandé.
+
+Validation :
+Les sorties obtenues respectent fidèlement les dimensions spécifiées (par exemple, des hauteurs et largeurs fixes ou paramétrables) et valident le comportement des structures de contrôle itératives en C++.

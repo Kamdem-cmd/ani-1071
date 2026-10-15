@@ -1,0 +1,30 @@
+Sortie du programme:
+
+sin(radians(90)) = 0.999999999999
+cos(radians(180)) = -0.999999999996
+degres(3.14159) = 180.000000000000
+sin(radians(180)) = 0.000002653590
+sin(90) = 0.893996663601
+cos(180) = -0.598460069058
+
+--- Avec pi precis ---
+sin(radiansPrecis(90)) = 1.000000000000
+cos(radiansPrecis(180)) = -1.000000000000
+sin(radiansPrecis(180)) = 0.000000000000
+
+Radiens :
+Résultats des conversions et des fonctions trigonométriques :
+- sin(radians(90)) = 0.999999999999 (proche de 1.0)
+- cos(radians(180)) = -0.999999999996 (proche de -1.0)
+- degres(3.14159) = 180.000000000000
+
+Comparaison et précision :
+- sin(radians(180)) avec approximation standard de $\pi$ = 0.000002653590 (non nul à cause de l'imprécision sur $\pi$)
+- sin(90) sans conversion (passage direct d'un entier 90 en radians) = 0.893996663601 (résultat erroné car la fonction `sin` attend des radians et interprète 90 comme 90 radians)
+- cos(180) sans conversion = -0.598460069058
+
+Précision de pi :
+Utilisation d'une constante de $\pi$ de haute précision (fournie par `<cmath>` via `M_PI`) :
+- sin(radiansPrecis(90)) = 1.000000000000
+- cos(radiansPrecis(180)) = -1.000000000000
+- sin(radiansPrecis(180)) = 0.000000000000 (annulation parfaite de l'arrondi parasite grâce à la précision accrue de $\pi$).

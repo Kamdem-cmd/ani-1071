@@ -1,0 +1,39 @@
+Sortie:
+
+D:\ENSPY\AN-GAP_4\teguis\ASSF-1071\ani-1071\sprint-03\exo4-le_pgcd_compose>pgcd.exe
+ppcm(4, 6) = 12 (attendu : 12)
+ppcm(12, 15) = 60
+ppcm(7, 5) = 35
+
+--- Comptage des tours ---
+Couple (1071, 462) :
+  Euclide : 3 tours
+  Soustractions : 11 tours
+Couple (1000000, 1) :
+  Euclide : 1 tours
+  Soustractions : 999999 tours
+
+--- Test du d├®bordement ---
+ppcm standard(60000, 40000) = -94748
+ppcm corrig├®(60000, 40000) = 120000
+
+
+PPCM :
+Calculs du Plus Petit Commun Multiple pour différents couples de nombres :
+- ppcm(4, 6) = 12 (attendu : 12)
+- ppcm(12, 15) = 60
+- ppcm(7, 5) = 35
+
+Comptage des tours :
+Comparaison du nombre d'opérations (tours de boucle) entre l'algorithme d'Euclide (via le PGCD) et l'algorithme par soustractions successives :
+- Couple (1071, 462) :
+  - Euclide : 3 tours
+  - Soustractions : 11 tours
+- Couple (1000000, 1) :
+  - Euclide : 1 tour
+  - Soustractions : 999999 tours
+
+Débordement :
+Illustration des limites des types entiers standards face à l'arithmétique :
+- ppcm standard(60000, 40000) = -94748 (Comportement d'overflow/débordement arithmétique silencieux, car le produit intermédiaire dépasse la capacité maximale d'un entier signé sur 32 bits).
+- ppcm corrigé(60000, 40000) = 120000 (Résultat correct obtenu en effectuant la division avant la multiplication, évitant ainsi le dépassement de capacité).
